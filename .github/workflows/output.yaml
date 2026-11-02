@@ -4,7 +4,7 @@ jobs:
   OutputEntireGitHubContext:
     runs-on: ubuntu-latest
     steps:
-      - name: Output GitHub Context
+      - name: Output Entire GitHub Context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
