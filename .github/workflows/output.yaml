@@ -1,0 +1,26 @@
+name: context and output
+on: workflow_dispatch
+jobs:
+  OutputEntireGitHubContext:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output GitHub Context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "GitHub Context:"
+          echo "$GITHUB_CONTEXT"
+      - name: Output Entire Runner Context
+        env:
+          RUNNER_CONTEXT: ${{ toJson(runner) }}
+        run: |
+          echo "Runner Context:"
+          echo "$RUNNER_CONTEXT"
+      - name: Output GitHub Actor
+        run: |
+          echo "The actor who triggered this workflow is: ${{ github.actor }}"
+          echo "GitHub Actor: ${{ github.actor }}"
+      - name: Output Runners Os
+        run: |
+          echo "The runner OS is: ${{ runner.os }}"
+          echo "Runner OS: ${{ runner.os }}"
