@@ -1,4 +1,4 @@
-name: context and output
+name: Context and Output Workflow
 on: workflow_dispatch
 jobs:
   OutputEntireGitHubContext:
